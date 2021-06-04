@@ -6,7 +6,7 @@
             home-manager.users.benton = { inputs, ... }: {
                 home.stateVersion = "21.05";
                 home.packages = import ./programs { inherit inputs; };
-                programs = import ./config { inherit inputs; };
+                programs = import ./configs { inherit inputs; };
                 xdg = import ./xdg { inherit inputs; };
             };
         }
