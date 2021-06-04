@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
 
     imports = [
         ./boot
@@ -28,6 +28,4 @@
     users.users.root.hashedPassword = "!";
 
     system.stateVersion = "20.09";
-
 } 
-
