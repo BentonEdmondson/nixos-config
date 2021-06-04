@@ -1,4 +1,4 @@
-{ config, pkgs, ...}: {
+{ ... }: {
 
     swapDevices = [ { device = "/swapfile"; size = 1024; } ];
     
