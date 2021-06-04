@@ -17,8 +17,7 @@
                 modules = [
                     ./system
                     ./software
-                    ./hardware/surface-pro-4.nix
-                    inputs.hardware.nixosModules.microsoft-surface
+                    ./hardware/surface-pro-4
                 ];
             };
         };
