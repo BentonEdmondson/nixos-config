@@ -13,7 +13,11 @@
         nixosConfigurations = {
             surface-pro-4 = inputs.nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
-                specialArgs = { inherit inputs; };
+                specialArgs = {
+                    inputs.home = inputs.home;
+                    inputs.hardware = inputs.hardware;
+                    inputs.nixpkgs = inputs.nixpkgs.legacyPackages."x86_64-linux";
+                };
                 modules = [
                     ./system
                     ./software

@@ -1,30 +1,31 @@
-{ pkgs, ... }: {
+{ inputs, ... }: {
     programs.home-manager.enable = true;
     home.stateVersion = "21.05";
     home.packages = [
 
         # everyday stuff
-        pkgs.firefox
-        pkgs.thunderbird
-        pkgs.blender
-        #pkgs.zoom-us
-        pkgs.libreoffice
-        pkgs.bitwarden
+        inputs.nixpkgs.firefox
+        inputs.nixpkgs.thunderbird
+        inputs.nixpkgs.blender
+        #inputs.nixpkgs.zoom-us
+        inputs.nixpkgs.libreoffice
+        inputs.nixpkgs.bitwarden
 
         # development
-        pkgs.etcher
-        pkgs.git
+        inputs.nixpkgs.etcher
+        inputs.nixpkgs.git
+        inputs.nixpkgs.vscodium
 
         # crypto
-        pkgs.mycrypto
-        pkgs.go-ethereum
+        inputs.nixpkgs.mycrypto
+        inputs.nixpkgs.go-ethereum
     ];
 
     programs.vscode = {
         enable = true;
-        package = pkgs.vscodium;
+        package = inputs.nixpkgs.vscodium;
         extensions = [
-            pkgs.vscode-extensions.bbenoist.Nix
+            inputs.nixpkgs.vscode-extensions.bbenoist.Nix
         ];
     };
 }
