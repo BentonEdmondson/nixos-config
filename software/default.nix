@@ -1,13 +1,12 @@
-{ inputs, ... }: {
+{ flakes, ... }: {
     imports = [
-        inputs.home.nixosModules.home-manager {
+        flakes.home.nixosModules.home-manager {
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.benton = { inputs, ... }: {
+            home-manager.users.benton = { ... }: {
                 home.stateVersion = "21.05";
-                home.packages = import ./programs { inherit inputs; };
-                programs = import ./configs { inherit inputs; };
-                xdg = import ./xdg { inherit inputs; };
+                home.packages = import ./programs { inherit flakes; };
+                programs = import ./configs { inherit flakes; };
+                xdg = import ./xdg { inherit flakes; };
             };
         }
     ];

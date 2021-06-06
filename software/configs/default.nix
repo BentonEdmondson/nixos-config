@@ -1,11 +1,11 @@
-{ inputs, ... }: {
+{ flakes, ... }: {
     home-manager.enable = true;
 
     vscode = {
         enable = true;
-        package = inputs.nixpkgs.vscodium;
+        package = flakes.nixpkgs.vscodium;
         extensions = [
-            inputs.nixpkgs.vscode-extensions.bbenoist.Nix
+            flakes.nixpkgs.vscode-extensions.bbenoist.Nix
         ];
     };
 }

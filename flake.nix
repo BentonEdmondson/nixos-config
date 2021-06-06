@@ -9,15 +9,11 @@
         hardware.url = "github:nixos/nixos-hardware";
     };
 
-    outputs = { self, ... }@inputs: {
+    outputs = { self, ... }@flakes: let input-schema = import ./utils/input-schema; in {
         nixosConfigurations = {
-            surface-pro-4 = inputs.nixpkgs.lib.nixosSystem {
+            surface-pro-4 = flakes.nixpkgs.lib.nixosSystem rec {
                 system = "x86_64-linux";
-                specialArgs = {
-                    inputs.home = inputs.home;
-                    inputs.hardware = inputs.hardware;
-                    inputs.nixpkgs = inputs.nixpkgs.legacyPackages."x86_64-linux";
-                };
+                specialArgs = { flakes = input-schema system flakes; };
                 modules = [
                     ./system
                     ./software

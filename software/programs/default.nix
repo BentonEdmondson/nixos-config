@@ -1,17 +1,17 @@
-{ inputs, ... }: [
+{ flakes, ... }: [
     # everyday stuff
-    inputs.nixpkgs.firefox
-    inputs.nixpkgs.thunderbird
-    inputs.nixpkgs.blender
-    inputs.nixpkgs.libreoffice
-    inputs.nixpkgs.bitwarden
+    flakes.nixpkgs.firefox
+    flakes.nixpkgs.thunderbird
+    flakes.nixpkgs.blender
+    flakes.nixpkgs.libreoffice
+    flakes.nixpkgs.bitwarden
 
     # development
-    inputs.nixpkgs.etcher
-    inputs.nixpkgs.git
-    inputs.nixpkgs.vscodium
+    flakes.nixpkgs.etcher
+    flakes.nixpkgs.git
+    flakes.nixpkgs.vscodium
 
     # crypto
-    inputs.nixpkgs.mycrypto
-    inputs.nixpkgs.go-ethereum
+    flakes.nixpkgs.mycrypto
+    flakes.nixpkgs.go-ethereum
 ]
