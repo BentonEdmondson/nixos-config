@@ -11,11 +11,11 @@
         hardware.url = "github:nixos/nixos-hardware";
     };
 
-    outputs = { self, ... }@flakes: {
+    outputs = { self, ... }@flakes: let utils = import ./utils; in {
         nixosConfigurations = {
             surface-pro-4 = flakes.nixpkgs.lib.nixosSystem rec {
                 system = "x86_64-linux";
-                specialArgs = (import ./utils).flakes-as-arg system flakes;
+                specialArgs = utils.flakes-as-arg system flakes;
                 modules = [
                     ./system
                     ./software
