@@ -3,7 +3,6 @@
     inputs.nixpkgs.firefox
     inputs.nixpkgs.thunderbird
     inputs.nixpkgs.blender
-    #inputs.nixpkgs.zoom-us
     inputs.nixpkgs.libreoffice
     inputs.nixpkgs.bitwarden
 
