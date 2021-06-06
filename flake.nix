@@ -1,4 +1,6 @@
 {
+    # sadly you cannot use let...in nor import to generate inputs
+    # it appears they must be essentially literal
     inputs = {
         # package build instructions
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -9,11 +11,11 @@
         hardware.url = "github:nixos/nixos-hardware";
     };
 
-    outputs = { self, ... }@flakes: let input-schema = (import ./utils).input-schema; in {
+    outputs = { self, ... }@flakes: {
         nixosConfigurations = {
             surface-pro-4 = flakes.nixpkgs.lib.nixosSystem rec {
                 system = "x86_64-linux";
-                specialArgs = { flakes = input-schema system flakes; };
+                specialArgs = (import ./utils).flakes-as-arg system flakes;
                 modules = [
                     ./system
                     ./software
