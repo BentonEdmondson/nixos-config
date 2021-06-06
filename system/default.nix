@@ -10,6 +10,13 @@
     nix.package = pkgs.nixUnstable;
     nix.extraOptions = "experimental-features = nix-command flakes";
 
+    nix.autoOptimiseStore = true;
+    nix.gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 14d";
+    };
+
     networking.hostName = "surface-pro-4";
     time.timeZone = "America/Chicago";
     sound.enable = true;
