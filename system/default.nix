@@ -10,7 +10,10 @@
     nix.package = pkgs.nixUnstable;
     nix.extraOptions = "experimental-features = nix-command flakes";
 
-    nix.autoOptimiseStore = true;
+    nix.optimise = {
+        automatic = true;
+        dates = "1week";
+    };
     nix.gc = {
         automatic = true;
         dates = "weekly";
