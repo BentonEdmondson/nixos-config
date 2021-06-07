@@ -25,9 +25,8 @@
         extraGroups = [ "wheel" "networkmanager" ];
         hashedPassword = "$6$OdSiSlN9o$xHOCBTBgll28xbHfsi0kcC4J3fNngmEYSVzfP57HaHzcO/HKzD0ca8uQLH8rV7PwBSxWEWRlU6sMaRI9Vd/qL1";
     };
-
-    # disable password-based login for root.
     users.users.root.hashedPassword = "!";
+    security.sudo.wheelNeedsPassword = false;
 
     system.stateVersion = "20.09";
 } 
