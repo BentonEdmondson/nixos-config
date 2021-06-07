@@ -10,15 +10,9 @@
     nix.package = pkgs.nixUnstable;
     nix.extraOptions = "experimental-features = nix-command flakes";
 
-    nix.optimise = {
-        automatic = true;
-        dates = "1week";
-    };
-    nix.gc = {
-        automatic = true;
-        dates = "weekly";
-        options = "--delete-older-than 14d";
-    };
+    # 3:15 am daily is my understanding
+    nix.optimise.automatic = true;
+    nix.gc.automatic = true;
 
     networking.hostName = "surface-pro-4";
     time.timeZone = "America/Chicago";
