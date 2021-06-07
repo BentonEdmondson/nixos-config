@@ -9,6 +9,7 @@
     # development
     flakes.nixpkgs.etcher
     flakes.nixpkgs.git
+    flakes.nixpkgs.gitg
     flakes.nixpkgs.vscodium
 
     # crypto
