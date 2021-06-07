@@ -20,6 +20,7 @@
                     ./system
                     ./software
                     ./hardware/surface-pro-4
+                    ({ ... }: { networking.hostName = "surface-pro-4"; })
                 ];
             };
         };

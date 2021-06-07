@@ -14,7 +14,6 @@
     nix.optimise.automatic = true;
     nix.gc.automatic = true;
 
-    networking.hostName = "surface-pro-4";
     time.timeZone = "America/Chicago";
     sound.enable = true;
     hardware.pulseaudio.enable = true;
