@@ -23,7 +23,7 @@
     users.users.benton = {
         isNormalUser = true;
         extraGroups = [ "wheel" "networkmanager" ];
-        passwordFile = "/etc/nixos/system/passwords/benton";
+        hashedPassword = "$6$OdSiSlN9o$xHOCBTBgll28xbHfsi0kcC4J3fNngmEYSVzfP57HaHzcO/HKzD0ca8uQLH8rV7PwBSxWEWRlU6sMaRI9Vd/qL1";
     };
 
     # disable password-based login for root.
