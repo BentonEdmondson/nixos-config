@@ -1,6 +1,4 @@
 { flakes, ... }: {
-    home-manager.enable = true;
-
     vscode = {
         enable = true;
         package = flakes.nixpkgs.vscodium;
