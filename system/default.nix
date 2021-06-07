@@ -24,7 +24,7 @@
     users.users.benton = {
         isNormalUser = true;
         extraGroups = [ "wheel" "networkmanager" ];
-        passwordFile = "./password-benton";
+        passwordFile = "./passwordFile-benton";
     };
 
     # disable password-based login for root.
