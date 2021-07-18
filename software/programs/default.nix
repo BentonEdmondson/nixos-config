@@ -5,7 +5,7 @@
     flakes.nixpkgs.blender
     flakes.nixpkgs.libreoffice
     flakes.nixpkgs.bitwarden
-    flakes.nixpkgs.bookworm
+    flakes.nixpkgs.foliate
 
     # development
     flakes.nixpkgs.etcher

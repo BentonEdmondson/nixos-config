@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ flakes, ... }: {
 
     imports = [
         ./boot
@@ -7,7 +7,7 @@
     ];
 
     # enable flakes
-    nix.package = pkgs.nixUnstable;
+    nix.package = flakes.nixpkgs.nixUnstable;
     nix.extraOptions = "experimental-features = nix-command flakes";
 
     # 3:15 am daily is my understanding
