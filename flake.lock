@@ -37,7 +37,9 @@
     },
     "inept-epub": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1626630204,
@@ -62,11 +64,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1626654552,
-        "narHash": "sha256-0FMnTRSpinXkpvB1rQF/q4b7ud2DinjGygW9NIgmBzc=",
+        "lastModified": 1626911273,
+        "narHash": "sha256-46S1KJrGbE7FyPMqEK2MUyxF4z+66uDG9oy4aS/xOTU=",
         "owner": "BentonEdmondson",
         "repo": "knock",
-        "rev": "7485a8e823a2e82f4e545a17173aa971281a6c5d",
+        "rev": "8f40d7595c05c6307dedcbd8d2c295f08aaa981b",
         "type": "github"
       },
       "original": {
@@ -77,7 +79,9 @@
     },
     "libgourou-utils": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1626630231,
@@ -94,38 +98,6 @@
       }
     },
     "nixpkgs": {
-      "locked": {
-        "lastModified": 1626464457,
-        "narHash": "sha256-u2PCh/+8vQSLwf0mPpKHKQ8hAPB3l4uNZR3r0TdK2Lg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "c6c4a3d45ab200f17805d2d86a1ff1cc7ca2b186",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1626464457,
-        "narHash": "sha256-u2PCh/+8vQSLwf0mPpKHKQ8hAPB3l4uNZR3r0TdK2Lg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "c6c4a3d45ab200f17805d2d86a1ff1cc7ca2b186",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
       "locked": {
         "lastModified": 1626464457,
         "narHash": "sha256-u2PCh/+8vQSLwf0mPpKHKQ8hAPB3l4uNZR3r0TdK2Lg=",
@@ -146,7 +118,7 @@
         "hardware": "hardware",
         "home": "home",
         "knock": "knock",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs"
       }
     }
   },

@@ -5,6 +5,8 @@
     flakes.nixpkgs.blender
     flakes.nixpkgs.libreoffice
     flakes.nixpkgs.bitwarden
+    flakes.nixpkgs.cool-retro-term
+    flakes.nixpkgs.libsForQt5.kdenlive
 
     # reading
     flakes.nixpkgs.foliate
