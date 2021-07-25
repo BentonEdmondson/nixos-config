@@ -11,6 +11,7 @@
     # reading
     flakes.nixpkgs.foliate
     flakes.knock
+    flakes.nixpkgs.newsflash
 
     # development
     flakes.nixpkgs.etcher
