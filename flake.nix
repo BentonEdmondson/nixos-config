@@ -3,14 +3,14 @@
     # it appears they must be essentially literal
     inputs = {
         # package build instructions
-        nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
         # program and program settings management
-        home.url = github:nix-community/home-manager;
+        home.url = "github:nix-community/home-manager";
         home.inputs.nixpkgs.follows = "nixpkgs";
         # system-specific hardware (e.g. touchscreen support)
-        hardware.url = github:nixos/nixos-hardware;
+        hardware.url = "github:nixos/nixos-hardware";
         # knock command for ebooks
-        knock.url = github:BentonEdmondson/knock;
+        knock.url = "github:BentonEdmondson/knock";
         knock.inputs.nixpkgs.follows = "nixpkgs";
     };
 
