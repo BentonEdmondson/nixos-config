@@ -8,10 +8,13 @@
         home.url = "github:nix-community/home-manager";
         home.inputs.nixpkgs.follows = "nixpkgs";
         # system-specific hardware (e.g. touchscreen support)
-        hardware.url = "github:nixos/nixos-hardware";
+        hardware.url = "github:devins2518/nixos-hardware";
         # knock command for ebooks
         knock.url = "github:BentonEdmondson/knock";
         knock.inputs.nixpkgs.follows = "nixpkgs";
+        # firefox addons
+        firefox-addons.url = "gitlab:BentonEdmondson/rycee-nur-expressions?dir=pkgs/firefox-addons";
+        firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
     };
 
     outputs = { self, ... }@flakes: let utils = import ./utils; in {

@@ -4,6 +4,7 @@
         flakes = flakes // {
             nixpkgs = flakes.nixpkgs.legacyPackages.${architecture};
             knock = flakes.knock.defaultPackage.${architecture};
+            firefox-addons = flakes.firefox-addons.packages.${architecture};
         };
     };
 }

@@ -1,25 +1,31 @@
 { flakes, ... }: [
-    # everyday stuff
+    # browser
     flakes.nixpkgs.firefox
-    flakes.nixpkgs.thunderbird
+    # 3d modelling
     flakes.nixpkgs.blender
+    # document editor
     flakes.nixpkgs.libreoffice
+    # password manager
     flakes.nixpkgs.bitwarden
-    flakes.nixpkgs.cool-retro-term
+    # video editor
     flakes.nixpkgs.libsForQt5.kdenlive
+    # text chatting
+    flakes.nixpkgs.element-desktop
 
-    # reading
+    # epub reader
     flakes.nixpkgs.foliate
+    # acsm decryptor
     flakes.knock
+    # rss feed
     flakes.nixpkgs.newsflash
 
-    # development
-    flakes.nixpkgs.etcher
-    flakes.nixpkgs.git
-    flakes.nixpkgs.gitg
+    # text editor
     flakes.nixpkgs.vscodium
+    # version control
+    flakes.nixpkgs.git
 
-    # crypto
-    flakes.nixpkgs.mycrypto
-    flakes.nixpkgs.go-ethereum
+    # cool text editor
+    flakes.nixpkgs.cool-retro-term
+
+    flakes.nixpkgs.nodePackages.bitwarden-cli
 ]
