@@ -8,7 +8,7 @@
         home.url = "github:nix-community/home-manager";
         home.inputs.nixpkgs.follows = "nixpkgs";
         # system-specific hardware (e.g. touchscreen support)
-        hardware.url = "github:devins2518/nixos-hardware";
+        hardware.url = "github:NixOS/nixos-hardware";
         # knock command for ebooks
         knock.url = "github:BentonEdmondson/knock";
         knock.inputs.nixpkgs.follows = "nixpkgs";
