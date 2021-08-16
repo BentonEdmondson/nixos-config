@@ -6,7 +6,7 @@
                 home.stateVersion = "21.05";
                 home.packages = import ./programs { inherit flakes; };
                 programs = (import ./configs { inherit flakes; }) // { home-manager.enable = true; };
-                xdg = import ./xdg { inherit flakes; };
+                xdg = (import ./xdg { inherit flakes; }) // { enable = true; };
             };
         }
     ];
