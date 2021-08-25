@@ -13,7 +13,7 @@
         knock.url = "github:BentonEdmondson/knock";
         knock.inputs.nixpkgs.follows = "nixpkgs";
         # firefox addons
-        firefox-addons.url = "gitlab:BentonEdmondson/rycee-nur-expressions?dir=pkgs/firefox-addons";
+        firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
         firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
     };
 
