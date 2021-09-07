@@ -1,6 +1,6 @@
 { flakes, ... }: [
     # browser
-    flakes.nixpkgs.firefox
+    flakes.nixpkgs.ungoogled-chromium
     # 3d modelling
     flakes.nixpkgs.blender
     # document editor
@@ -23,9 +23,6 @@
     flakes.nixpkgs.vscodium
     # version control
     flakes.nixpkgs.git
-
-    # cool text editor
-    flakes.nixpkgs.cool-retro-term
-
-    flakes.nixpkgs.nodePackages.bitwarden-cli
+    # shell
+    flakes.nixpkgs.fish
 ]

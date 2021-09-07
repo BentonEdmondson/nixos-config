@@ -4,7 +4,15 @@
         ./boot
         ./gnome
         ./networking
+        ./xdg
+        flakes.home
     ];
+
+    #home-manager.sharedModules = [ { home.packages = flakes.lib.mkForce []; } ];
+    #home-manager.users.benton.home.packages = flakes.lib.mkForce [];
+    home-manager.useUserPackages = true;
+    # for purity
+    home-manager.useGlobalPkgs = true;
 
     # enable flakes
     nix.package = flakes.nixpkgs.nixUnstable;
