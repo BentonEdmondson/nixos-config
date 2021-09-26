@@ -1,9 +1,7 @@
 { flakes, ... }: {
 
     imports = [
-        ./boot
         ./gnome
-        ./networking
         ./xdg
         flakes.home
     ];
@@ -42,6 +40,18 @@
     };
     # convenience
     security.sudo.wheelNeedsPassword = false;
+
+    networking.networkmanager.enable = true;
+
+    boot.loader = {
+        grub = {
+            enable = true;
+            efiSupport = true;
+            device = "nodev";
+            # this makes windows appear if dual booting
+            useOSProber = true;
+        };
+    };
 
     system.stateVersion = "20.09";
 } 
