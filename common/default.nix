@@ -26,6 +26,7 @@
     hardware.pulseaudio.enable = true;
     services.xserver.libinput = {
         enable = true;
+        touchpad.naturalScrolling = true;
     };
 
     users = {
@@ -45,15 +46,20 @@
 
     networking.networkmanager.enable = true;
 
-    boot.loader = {
-        grub = {
-            enable = true;
-            efiSupport = true;
-            device = "nodev";
-            # this makes windows appear if dual booting
-            useOSProber = true;
-        };
-    };
+    # TODO: get grub working
+    boot.loader.systemd-boot.enable = true;
+    #boot.loader = {
+    #    efi = {
+    #        canTouchEfiVariables = true;
+    #    };
+    #    grub = {
+    #        enable = true;
+    #        efiSupport = true;
+    #        device = "nodev";
+    #        # this makes windows appear if dual booting
+    #        useOSProber = true;
+    #    };
+    #};
 
     fonts.fonts = [ flakes.nixpkgs.source-code-pro ];
     
