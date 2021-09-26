@@ -22,8 +22,8 @@
                 system = "x86_64-linux";
                 specialArgs = { inherit flakes; };
                 modules = [
-                    ./system
-                    ./software
+                    ./common
+                    ./programs
                     ./hardware/surface-pro-4
                 ];
             };
@@ -31,9 +31,9 @@
                 system = "x86_64-linux";
                 specialArgs = { inherit flakes; };
                 modules = [
-                    ./system
-                    ./software
-                    ./hardware/blade-14
+                    ./common
+                    ./programs
+                    ./machines/blade-14
                 ];
             };
         };
