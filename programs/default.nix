@@ -9,12 +9,12 @@
         flakes.nixpkgs.libsForQt5.kdenlive
         flakes.nixpkgs.element-desktop
 
-        flakes.nixpkgs.foliate
+        flakes.nixpkgs.zathura
         flakes.knock
         flakes.nixpkgs.newsflash
 
         flakes.nixpkgs.vscodium
         flakes.nixpkgs.git
-        flakes.nixpkgs.fish
+        flakes.nixpkgs.alacritty
     ];
 }

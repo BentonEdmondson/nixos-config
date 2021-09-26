@@ -1,7 +1,7 @@
 { flakes, ... }: {
 
     imports = [
-        ./gnome
+        ./display
         ./xdg
         flakes.home
     ];
@@ -24,7 +24,9 @@
     time.timeZone = "America/Detroit";
     sound.enable = true;
     hardware.pulseaudio.enable = true;
-    services.xserver.libinput.enable = true;
+    services.xserver.libinput = {
+        enable = true;
+    };
 
     users = {
         mutableUsers = false;
@@ -53,5 +55,7 @@
         };
     };
 
+    fonts.fonts = [ flakes.nixpkgs.source-code-pro ];
+    
     system.stateVersion = "20.09";
 } 
