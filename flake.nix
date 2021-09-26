@@ -27,6 +27,15 @@
                     ./hardware/surface-pro-4
                 ];
             };
+            blade-14 = flakes.lib.nixosSystem rec {
+                system = "x86_64-linux";
+                specialArgs = { inherit flakes; };
+                modules = [
+                    ./system
+                    ./software
+                    ./hardware/blade-14
+                ];
+            };
         };
     };
 }
