@@ -53,10 +53,11 @@ nord = [
 ]
 
 ### groups ###
-for group in [Group(i) for i in "asdfg"]:
+groups = [Group(i) for i in "asdfg"]
+for i in groups:
     keys.extend([
-        Key([mod], group.name, lazy.group[group.name].toscreen()),
-        Key([mod, "shift"], group.name, lazy.window.togroup(group.name, switch_group=True)),
+        Key([mod], i.name, lazy.group[i.name].toscreen()),
+        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True)),
     ])
 
 ### layouts ###
