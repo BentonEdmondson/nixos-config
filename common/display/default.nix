@@ -37,6 +37,14 @@
         };
         windowManager.qtile.enable = true;
     };
+    home-manager.users.benton.xsession = {
+        enable = true;
+        pointerCursor = {
+            package = flakes.nixpkgs.bibata-cursors;
+            name = "Bibata_Classic";
+            size = 48;
+        };
+    };
 
     home-manager.users.benton.home.file.".config/qtile/config.py" = {
         source = ./qtile-config.py;
