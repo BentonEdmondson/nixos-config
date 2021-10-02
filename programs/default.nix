@@ -10,6 +10,7 @@
         flakes.nixpkgs.element-desktop
         flakes.nixpkgs.gparted
         flakes.nixpkgs.xorg.xeyes
+        flakes.nixpkgs.ranger
 
         flakes.nixpkgs.zathura
         flakes.knock
