@@ -5,5 +5,10 @@
     ];
 
     networking.hostName = "surface-pro-4";
-    swapDevices = [ { device = "/swapfile"; size = 1024; } ];
+
+    services.xserver = {
+        enable = true;
+        displayManager.gdm.enable = true;
+        desktopManager.gnome.enable = true;
+    }
 }

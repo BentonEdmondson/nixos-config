@@ -29,7 +29,7 @@
                 modules = [
                     ./common
                     ./programs
-                    ./hardware/surface-pro-4
+                    ./machines/surface-pro-4
                 ];
             };
             blade-14 = flakes.lib.nixosSystem rec {

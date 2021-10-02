@@ -1,7 +1,6 @@
 { flakes, ... }: {
 
     imports = [
-        ./display
         ./xdg
         flakes.home
     ];
