@@ -1,35 +1,7 @@
 set $mod Mod4
-set $left h
-set $down j
-set $up k
-set $right l
-set $term alacritty
 
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+output * bg /home/benton/.config/sway/wallpaper fill
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-#output * bg @datadir@/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
 #
@@ -45,113 +17,75 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-# Key bindings:
-    # Run various programs
-    bindsym $mod+Return exec $term
-    bindsym $mod+c exec codium --enable-features=UseOzonePlatform --ozone-platform=wayland
-    bindsym $mod+b exec firefox
 
-    # Kill focused window
-    bindsym $mod+Shift+q kill
+### bindings ###
 
-    # Start your launcher
-    bindsym $mod+d exec $menu
+# run various programs (mod uiop)
+bindsym $mod+Return exec alacritty
+bindsym $mod+u exec codium --enable-features=UseOzonePlatform --ozone-platform=wayland
+bindsym $mod+i exec firefox
+bindsym $mod+o exec alacritty -e ranger
+bindsym $mod+p exec dmenu_path | dmenu | xargs swaymsg exec --
+bindsym $mod+x exec dm-tool lock
 
-# Movement
-    # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
+bindsym $mod+c kill
+bindsym $mod+f fullscreen
+bindsym $mod+Ctrl+x exec loginctl terminate-user $USER
 
-    # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
+# move focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
-    # Resize windows
-    bindsym $mod+Ctrl+$left resize shrink width 10px
-    bindsym $mod+Ctrl+$down resize grow height 10px
-    bindsym $mod+Ctrl+$up resize shrink height 10px
-    bindsym $mod+Ctrl+$right resize grow width 10px
+# shift focus
+bindsym $mod+Ctrl+h move left
+bindsym $mod+Ctrl+j move down
+bindsym $mod+Ctrl+k move up
+bindsym $mod+Ctrl+l move right
 
-# Workspaces
-    # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
-    # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
-    # Note: workspaces can have any name you want, not just numbers.
+# control windows
+bindsym $mod+Shift+h resize shrink width 10px
+bindsym $mod+Shift+j resize grow height 10px
+bindsym $mod+Shift+k resize shrink height 10px
+bindsym $mod+Shift+l resize grow width 10px
 
-#
-# Layout stuff:
-#
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    bindsym $mod+Ctrl+b splith
-    bindsym $mod+Ctrl+v splitv
+# switch to workspace
+bindsym $mod+7 workspace number 1
+bindsym $mod+8 workspace number 2
+bindsym $mod+9 workspace number 3
+bindsym $mod+0 workspace number 4
+# send application to workspace
+bindsym $mod+Ctrl+7 move container to workspace number 1 ; workspace number 1
+bindsym $mod+Ctrl+8 move container to workspace number 2 ; workspace number 2
+bindsym $mod+Ctrl+9 move container to workspace number 3 ; workspace number 3
+bindsym $mod+Ctrl+0 move container to workspace number 4 ; workspace number 4
 
-    # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
 
-    # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+### look and feel ###
 
-# Scratchpad:
-    # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
+# remove window titles
+default_border pixel
+default_floating_border pixel
 
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
 
-# Window styles:
-    # remove window title bar
-    default_border pixel
-    default_floating_border pixel
+### will fix later ###
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-
-set $base00 #101218
-set $base01 #1f222d
-set $base02 #252936
-set $base03 #5e81ac  
-set $base04 #C0C5CE
-set $base05 #d1d4e0
-set $base06 #C9CCDB
-set $base07 #ffffff
-set $base08 #ee829f
-set $base09 #f99170
-set $base0A #ffefcc
-set $base0B #a5ffe1
-set $base0C #97e0ff
-set $base0D #97bbf7
-set $base0E #c0b7f9
-set $base0F #fcc09e
+set $nord0 #2e3440
+set $nord1 #3b4252
+set $nord2 #434c5e
+set $nord3 #4c566a
+set $nord4 #d8dee9
+set $nord5 #e5e9f0
+set $nord6 #eceff4
+set $nord7 #8fbcbb
+set $nord8 #88c0d0
+set $nord9 #81a1c1
+set $nord10 #5e81a
+set $nord11 #bf616a
+set $nord12 #d08770
+set $nord13 #ebcb8b
+set $nord14 #a3be8
 
 bar {
     position top
@@ -161,23 +95,22 @@ bar {
     status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
 
     colors {
-        separator  $base01
-        background $base01
-        statusline #81a1c1
+        background $nord1
+        statusline $nord9
             
-        #                   border  background text
-        focused_workspace  $base01 $base01    #81a1c1 
-        active_workspace   $base01 $base02    $base03
-        inactive_workspace $base01 $base01    #4c566a
-        urgent_workspace   $base01 $base01    $base08
-        binding_mode       $base01 #81a1c1    #2e3440
+        #                  border bgrnd. text
+        focused_workspace  $nord1 $nord1 $nord9 
+        active_workspace   $nord1 $nord2 $nord3
+        inactive_workspace $nord1 $nord1 $nord3
+        urgent_workspace   $nord1 $nord1 $nord8
+        binding_mode       $nord1 $nord9 $nord0
     }
 }
 
-    client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
-    client.unfocused        #2e3440 #2e3440 #888888 #2e3440
-    client.focused_inactive #2e3440 #2e3440 #888888 #2e3440
-    client.placeholder      #2e3440 #2e3440 #888888 #2e3440
-    client.urgent           #900000 #900000 #ffffff #900000
+client.focused             $nord9 $nord9 #ffffff
+client.unfocused           $nord0 $nord0 #888888
+client.focused_inactive    $nord0 $nord0 #888888
+client.placeholder         $nord0 $nord0 #888888
+client.urgent              #900000 #900000 #ffffff
 
-    client.background       #242424
+client.background          #242424

@@ -1,22 +1,28 @@
 { flakes, ... }: {
-    services.xserver = {
+    programs.sway.enable = true;
+
+    home-manager.users.benton.xsession = {
         enable = true;
-        displayManager = {
-            defaultSession = "sway";
-            lightdm.greeters.mini = {
-                enable = true;
-                user = "benton";
-                extraConfig = builtins.readFile ./lightdm-mini.conf;
-            };
+        pointerCursor = {
+            package = flakes.nixpkgs.bibata-cursors;
+            name = "Bibata_Classic";
+            size = 48;
         };
     };
 
-    programs.sway = {
-        enable = true;
-    };
-    home-manager.users.benton.home.file.".config/sway/config" = {
-        source = ./sway-config.in;
-        onChange = "sway reload";
+    home-manager.users.benton.home.file = {
+        # start sway on login
+        ".profile".text = "sway";
+
+        # sway configuration files
+        ".config/sway/config" = {
+            source = ./sway-config.in;
+            onChange = "sway reload";
+        };
+        ".config/sway/wallpaper" = {
+            source = ./wallpaper;
+            onChange = "sway reload";
+        };
     };
 
 }

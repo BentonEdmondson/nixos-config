@@ -22,7 +22,11 @@
 
     time.timeZone = "America/Detroit";
     sound.enable = true;
-    hardware.pulseaudio.enable = true;
+    hardware = {
+        pulseaudio.enable = true;
+        bluetooth.enable = true;
+    };
+    services.blueman.enable = true;
     services.xserver.libinput = {
         enable = true;
         touchpad.naturalScrolling = true;
@@ -33,7 +37,7 @@
         users = {
             benton = {
                 isNormalUser = true;
-                extraGroups = [ "wheel" "networkmanager" ];
+                extraGroups = [ "wheel" "networkmanager" "bluetooth" ];
                 hashedPassword = "$6$OdSiSlN9o$xHOCBTBgll28xbHfsi0kcC4J3fNngmEYSVzfP57HaHzcO/HKzD0ca8uQLH8rV7PwBSxWEWRlU6sMaRI9Vd/qL1";
             };
             # disable root login
