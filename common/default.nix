@@ -15,12 +15,12 @@
         # enable flakes
         package = flakes.nixpkgs.nixUnstable;
         extraOptions = "experimental-features = nix-command flakes";
-
-        optimise.automatic = true;
-        gc.automatic = true;
     };
 
-    time.timeZone = "America/Detroit";
+    time = {
+        timeZone = "America/Detroit";
+        hardwareClockInLocalTime = true;
+    };
     sound.enable = true;
     hardware = {
         pulseaudio.enable = true;
@@ -39,11 +39,13 @@
                 isNormalUser = true;
                 extraGroups = [ "wheel" "networkmanager" "bluetooth" ];
                 hashedPassword = "$6$OdSiSlN9o$xHOCBTBgll28xbHfsi0kcC4J3fNngmEYSVzfP57HaHzcO/HKzD0ca8uQLH8rV7PwBSxWEWRlU6sMaRI9Vd/qL1";
+                shell = flakes.nixpkgs.fish;
             };
             # disable root login
             root.hashedPassword = "!";
         };
     };
+    programs.fish.enable = true;
     # convenience
     security.sudo.wheelNeedsPassword = false;
 

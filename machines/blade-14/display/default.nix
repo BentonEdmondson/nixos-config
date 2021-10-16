@@ -1,5 +1,14 @@
 { flakes, ... }: {
     programs.sway.enable = true;
+    environment.etc = {
+        "sway/config".source = ./sway.conf;
+        "profile".text = ''
+            if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+                exec sway
+            fi
+        '';
+    };
+    home-manager.users.benton.home.file.".config/sway/wallpaper".source = ./wallpaper;
 
     home-manager.users.benton.xsession = {
         enable = true;
@@ -9,20 +18,4 @@
             size = 48;
         };
     };
-
-    home-manager.users.benton.home.file = {
-        # start sway on login
-        ".profile".text = "sway";
-
-        # sway configuration files
-        ".config/sway/config" = {
-            source = ./sway-config.in;
-            onChange = "sway reload";
-        };
-        ".config/sway/wallpaper" = {
-            source = ./wallpaper;
-            onChange = "sway reload";
-        };
-    };
-
 }

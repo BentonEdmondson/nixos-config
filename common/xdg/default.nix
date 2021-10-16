@@ -12,9 +12,9 @@
             pictures = "\$HOME/media/images";
             videos = "\$HOME/media/videos";
     
-            desktop = "\$HOME/etal/desktop";
-            templates = "\$HOME/etal/templates";
-            publicShare = "\$HOME/etal/public";
+            desktop = "\$HOME/misc/desktop";
+            templates = "\$HOME/misc/templates";
+            publicShare = "\$HOME/misc/public";
         };
     };
     
@@ -24,11 +24,5 @@
         XDG_CACHE_HOME = "\$HOME/.cache";
         XDG_DATA_HOME = "\$HOME/.local/share";
         XDG_STATE_HOME = "\$HOME/.local/state";
-
-        # some programs need to be scolded
-        # see https://wiki.archlinux.org/title/XDG_Base_Directory
-        #GNUPGHOME = "\$HOME/.config/gnupg";
-        #HISTFILE = "\$HOME/.local/share/bash/history";
-        #VSCODE_PORTABLE = "\$HOME/.local/share/vscode";
     };
 }

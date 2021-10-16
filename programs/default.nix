@@ -1,23 +1,35 @@
 { flakes, ... }: {
-    imports = [ ./configs.nix ];
+    imports = [ ./configs ];
 
     users.users.benton.packages = [
+        # terminal
+        flakes.nixpkgs.kitty
+        flakes.nixpkgs.fish
+
+        # ebooks
+        flakes.nixpkgs.zathura
+
+        # web
         flakes.nixpkgs.firefox-wayland
-        flakes.nixpkgs.blender
-        flakes.nixpkgs.libreoffice
-        flakes.nixpkgs.bitwarden
-        flakes.nixpkgs.libsForQt5.kdenlive
-        flakes.nixpkgs.element-desktop
-        flakes.nixpkgs.gparted
-        flakes.nixpkgs.xorg.xeyes
+
+        # file browser
         flakes.nixpkgs.ranger
 
-        flakes.nixpkgs.zathura
-        flakes.knock
-        flakes.nixpkgs.newsflash
-
+        # editor
+        flakes.nixpkgs.neovim
         flakes.nixpkgs.vscodium
+
+        # matrix client
+        flakes.nixpkgs.nheko
+
+        # bluetooth
+        flakes.nixpkgs.blueberry
+        flakes.nixpkgs.bluedevil
+
+        # utilities
+        flakes.nixpkgs.gitless
         flakes.nixpkgs.git
-        flakes.nixpkgs.alacritty
+        flakes.knock
+        flakes.nixpkgs.xorg.xeyes
     ];
 }
