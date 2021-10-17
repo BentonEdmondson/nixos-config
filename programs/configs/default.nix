@@ -31,7 +31,6 @@
                         user_pref("browser.tabs.warnOnClose", false);
                         // enable userChrome.css
                         user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-                        
                     '';
                 };
             };
