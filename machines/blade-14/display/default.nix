@@ -23,9 +23,6 @@
                 size = 48;
             };
         };
-        gtk = {
-            enable = true;
-            gtk3.extraConfig.gtk-cursor-theme-name = "Bibata_Classic";
-        };
+        gtk.enable = true;
     };
 }
