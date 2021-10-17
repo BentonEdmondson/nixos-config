@@ -10,7 +10,10 @@
         flakes.nixpkgs.zathura
 
         # web
-        flakes.nixpkgs.firefox-wayland
+        (flakes.nixpkgs.firefox-wayland.override {
+            cfg.enableTridactylNative = true;
+        })
+        flakes.nixpkgs.tridactyl-native
 
         # file browser
         flakes.nixpkgs.ranger
@@ -23,7 +26,6 @@
         flakes.nixpkgs.nheko
 
         # bluetooth
-        flakes.nixpkgs.blueberry
         flakes.nixpkgs.bluedevil
 
         # utilities

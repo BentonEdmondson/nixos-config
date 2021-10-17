@@ -37,7 +37,11 @@
             };
         };
 
-        home.file.".config/kitty/kitty.conf".source = ./kitty.conf;
-        home.file.".config/fish/config.fish".source = ./fish.fish;
+        xdg.configFile = {
+            "kitty/kitty.conf".source = ./kitty.conf;
+            "fish/config.fish".source = ./fish.fish;
+            "tridactyl/tridactylrc".source = ./tridactyl.conf;
+            "tridactyl/themes/gruv.css".source = ./tridactyl.css;
+        };
     };
 }
