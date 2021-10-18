@@ -11,10 +11,6 @@
 
         # web
         flakes.nixpkgs.qutebrowser
-        (flakes.nixpkgs.firefox-wayland.override {
-            cfg.enableTridactylNative = true;
-        })
-        flakes.nixpkgs.tridactyl-native
 
         # file browser
         flakes.nixpkgs.ranger
@@ -35,6 +31,5 @@
         flakes.nixpkgs.git
         flakes.knock
         flakes.nixpkgs.xorg.xeyes
-        flakes.nixpkgs.networkmanagerapplet
     ];
 }
