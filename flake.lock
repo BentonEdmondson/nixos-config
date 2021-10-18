@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "arkenfox-userjs": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1634027026,
-        "narHash": "sha256-/ITf8nv/IWR1sKBchPtdkPjZO5OFH9p6FgVbDfBrJc8=",
-        "owner": "arkenfox",
-        "repo": "user.js",
-        "rev": "85438d00e457bff692303af519da618c6372476b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "arkenfox",
-        "repo": "user.js",
-        "type": "github"
-      }
-    },
     "firefox-addons": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -23,11 +7,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1634443346,
-        "narHash": "sha256-9iNd8bTxLrHFf8/8M5vg2CjxbAxk/06XQnTpWnBBiz0=",
+        "lastModified": 1634544213,
+        "narHash": "sha256-ja9O1skFBsXZtjlJmSohDcU/qInhrosnXL6i0OXTSrI=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "d1b972d3358ac0fc24b6af5f6d0ac47a1304af26",
+        "rev": "24edcc9a03e1bfbc40d9537ea0067bd23a5f5ca8",
         "type": "gitlab"
       },
       "original": {
@@ -72,11 +56,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1634230035,
-        "narHash": "sha256-tS0dyWxVgb79Jk8elMthWv/oycj/Q4HHDoNL5V43kz8=",
+        "lastModified": 1634543124,
+        "narHash": "sha256-sPjP5GjZ0DgTgY8KljhGeix4L5ey7A3L1nm6lDffTh0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "309808afbc2a07e340067f66029a4202b4c4b959",
+        "rev": "b5d738b5a3f8c3738433e0aa6482afb4ac635380",
         "type": "github"
       },
       "original": {
@@ -165,11 +149,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1634488141,
-        "narHash": "sha256-cFpHRndrJyuE/AlUWFxTa0M3c7BxXbr6LNMKWvAiC5s=",
+        "lastModified": 1634594364,
+        "narHash": "sha256-4abUCFZVxR7p3JCtOzKIcp8R+p3dpxDmk6d9Bz2ry+Y=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "10bcba09959c2c3dc70fe4bb679462166579f441",
+        "rev": "c033ff53bbf6d02fe6d5863260a752892c2f6216",
         "type": "github"
       },
       "original": {
@@ -209,14 +193,30 @@
         "type": "github"
       }
     },
+    "pyllyukko-userjs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1634388191,
+        "narHash": "sha256-7JB8DJHe14lPlWZR8lSY/Ugs25aX6mFeoo2t8TTzdc4=",
+        "owner": "pyllyukko",
+        "repo": "user.js",
+        "rev": "f3fa7f83bc2846f16acc397fca33bc4edea23f1b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pyllyukko",
+        "repo": "user.js",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "arkenfox-userjs": "arkenfox-userjs",
         "firefox-addons": "firefox-addons",
         "hardware": "hardware",
         "home": "home",
         "knock": "knock",
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_4",
+        "pyllyukko-userjs": "pyllyukko-userjs"
       }
     }
   },

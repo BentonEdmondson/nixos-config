@@ -5,8 +5,8 @@
         hardware.url = "github:NixOS/nixos-hardware";
         knock.url = "github:BentonEdmondson/knock";
         firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-        arkenfox-userjs = {
-            url = "github:arkenfox/user.js";
+        pyllyukko-userjs = {
+            url = "github:pyllyukko/user.js";
             flake = false;
         };
     };
@@ -19,7 +19,7 @@
             hardware = flakes'.hardware.nixosModules;
             knock = flakes'.knock.defaultPackage.x86_64-linux;
             firefox-addons = flakes'.firefox-addons.packages.x86_64-linux;
-            arkenfox-userjs = flakes'.arkenfox-userjs;
+            pyllyukko-userjs = flakes'.pyllyukko-userjs;
         };
     in {
         nixosConfigurations = {

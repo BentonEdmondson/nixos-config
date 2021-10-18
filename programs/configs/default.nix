@@ -10,7 +10,7 @@
             };
             git = {
                 enable = true;
-                package = flakes.nixpkgs.gitless;
+                package = flakes.nixpkgs.git;
                 userEmail = "bentonedmondson@gmail.com";
                 userName = "benton";
             };
@@ -25,12 +25,9 @@
                     flakes.firefox-addons.sponsorblock
                 ];
                 profiles.benton = {
-                    extraConfig = (builtins.readFile (flakes.arkenfox-userjs + "/user.js")) + ''
-                        user_pref("extensions.pocket.enabled", false);
-                        user_pref("signon.rememberSignons", false);
-                        user_pref("browser.tabs.warnOnClose", false);
-                        // enable userChrome.css
-                        user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+                    extraConfig = (builtins.readFile (flakes.pyllyukko-userjs + "/user.js")) + ''
+                        // don't force private browsing (I want extensions working)
+                        user_pref("browser.privatebrowsing.autostart", false);
                     '';
                 };
             };
@@ -40,7 +37,9 @@
             "kitty/kitty.conf".source = ./kitty.conf;
             "fish/config.fish".source = ./fish.fish;
             "tridactyl/tridactylrc".source = ./tridactyl.conf;
-            "tridactyl/themes/gruv.css".source = ./tridactyl.css;
+            "tridactyl/themes/custom-theme.css".source = ./tridactyl.css;
+            "zathura/zathurarc".source = ./zathura.conf;
+            "qutebrowser/config.py".source = ./qute-style.py;
         };
     };
 }

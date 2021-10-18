@@ -8,7 +8,7 @@
         flakes.hardware.common-cpu-amd
     ];
 
-    boot.kernelPackages = flakes.nixpkgs.linuxPackages_latest;
+    #boot.kernelPackages = flakes.nixpkgs.linuxPackages_latest;
 
     networking.hostName = "blade-14";
 }

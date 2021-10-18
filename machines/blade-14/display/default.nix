@@ -1,18 +1,14 @@
-{ flakes, ... }: {
+{ flakes, config, ... }: {
     programs.sway = {
         enable = true;
         extraPackages = [
             flakes.nixpkgs.dmenu
-            # for the gsettings updater script
-            flakes.nixpkgs.glib
         ];
     };
-    environment.etc = {
+    home-manager.users.benton.xdg.configFile = {
         "sway/config".source = ./sway.conf;
-        # TODO: I don't think this works--it has to be run manually
-        "sway/import-gsettings".source = ./import-gsettings;
+        "sway/wallpaper".source = ./wallpaper;
     };
-    home-manager.users.benton.home.file.".config/sway/wallpaper".source = ./wallpaper;
 
     home-manager.users.benton = {
         xsession = {

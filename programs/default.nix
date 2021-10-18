@@ -10,6 +10,7 @@
         flakes.nixpkgs.zathura
 
         # web
+        flakes.nixpkgs.qutebrowser
         (flakes.nixpkgs.firefox-wayland.override {
             cfg.enableTridactylNative = true;
         })
@@ -30,8 +31,10 @@
 
         # utilities
         flakes.nixpkgs.gitless
+        flakes.nixpkgs.tldr
         flakes.nixpkgs.git
         flakes.knock
         flakes.nixpkgs.xorg.xeyes
+        flakes.nixpkgs.networkmanagerapplet
     ];
 }
