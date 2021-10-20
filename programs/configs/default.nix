@@ -14,13 +14,34 @@
                 userEmail = "bentonedmondson@gmail.com";
                 userName = "benton";
             };
+	    neovim = {
+	    	enable = true;
+		plugins = [
+	            flakes.nixpkgs.vimPlugins.vim-nix
+	        ];
+	    };
         };
 
-        xdg.configFile = {
-            "kitty/kitty.conf".source = ./kitty.conf;
-            "fish/config.fish".source = ./fish.fish;
-            "zathura/zathurarc".source = ./zathura.conf;
-            "qutebrowser/config.py".source = ./qutebrowser.py;
-        };
+        xdg = {
+	    configFile = {
+                "kitty".source = ./kitty;
+		"kitty".recursive = true;
+
+                "fish".source = ./fish;
+		"fish".recursive = true;
+
+                "zathura".source = ./zathura;
+                "zathura".recursive = true;
+
+                "qutebrowser".source = ./qutebrowser;
+                "qutebrowser".recursive = true;
+
+                "nvim".source = ./nvim;
+                "nvim".recursive = true;
+
+                "newsboat".source = ./newsboat;
+                "newsboat".recursive = true; 
+            };
+	};
     };
 }

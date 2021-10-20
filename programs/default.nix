@@ -10,10 +10,13 @@
         flakes.nixpkgs.zathura
 
         # web
-        flakes.nixpkgs.qutebrowser
+        (flakes.nixpkgs.qutebrowser.override { withPdfReader = false; })
 
         # file browser
         flakes.nixpkgs.ranger
+
+        # rss reader
+        flakes.nixpkgs.newsboat
 
         # editor
         flakes.nixpkgs.neovim
@@ -23,11 +26,11 @@
         flakes.nixpkgs.nheko
 
         # bluetooth
-        flakes.nixpkgs.bluedevil
+	flakes.nixpkgs.blueberry
 
         # utilities
-        flakes.nixpkgs.gitless
         flakes.nixpkgs.tldr
+        flakes.nixpkgs.gitless
         flakes.nixpkgs.git
         flakes.knock
         flakes.nixpkgs.xorg.xeyes

@@ -21,15 +21,16 @@
         timeZone = "America/Detroit";
         hardwareClockInLocalTime = true;
     };
+
     sound.enable = true;
+
     hardware = {
         pulseaudio.enable = true;
         bluetooth.enable = true;
     };
-    services.blueman.enable = true;
-    services.xserver.libinput = {
-        enable = true;
-        touchpad.naturalScrolling = true;
+
+    networking = {
+        networkmanager.enable = true;
     };
 
     users = {
@@ -48,8 +49,6 @@
     programs.fish.enable = true;
     # convenience
     security.sudo.wheelNeedsPassword = false;
-
-    networking.networkmanager.enable = true;
 
     # TODO: get grub working
     boot.loader.systemd-boot.enable = true;
