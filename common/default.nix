@@ -2,6 +2,7 @@
 
     imports = [
         ./xdg
+	./qmk
         flakes.home
     ];
 
@@ -29,9 +30,8 @@
         bluetooth.enable = true;
     };
 
-    networking = {
-        networkmanager.enable = true;
-    };
+    #services.connman.enable = true;
+    networking.networkmanager.enable = true;
 
     users = {
         mutableUsers = false;

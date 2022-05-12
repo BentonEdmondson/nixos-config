@@ -1,5 +1,8 @@
 { flakes, ... }: {
-    imports = [ ./configs ];
+    imports = [
+        ./configs
+	./data
+    ];
 
     users.users.benton.packages = [
         # terminal
